@@ -2,7 +2,7 @@
 const cardTemplate = document.querySelector("#card-template").content;
 
 // @todo: Функция создания карточки
-function createCard(cardData, deleteCard, likeCard, zoomCard) {
+export function createCard(cardData, deleteCard, likeCard, zoomCard) {
   const currentCard = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = currentCard.querySelector(".card__image");
 
@@ -24,11 +24,11 @@ function createCard(cardData, deleteCard, likeCard, zoomCard) {
 }
 
 // @todo: Функция удаления карточки
-function deleteCard(event) {
+export function deleteCard(event) {
   event.target.closest(".card").remove();
 }
 
 // @todo: Функция лайка карточки
-function likeCard(event) {
+export function likeCard(event) {
   event.target.classList.toggle("card__like-button_is-active");
 }
