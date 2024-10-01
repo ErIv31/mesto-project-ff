@@ -2,6 +2,10 @@
 export function openModal(popup) {
   popup.classList.add("popup_is-opened");
   document.addEventListener("keydown", closeModalEsc);
+  document.addEventListener("click", closeModalOverlay);
+  popup
+    .querySelector(".popup__close")
+    .addEventListener("click", closeModalCloseButton);
 }
 
 // @todo: Функция закрытия модального окна
