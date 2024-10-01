@@ -8,8 +8,10 @@ export function openModal(popup) {
 export function closeModal(popup) {
   popup.classList.remove("popup_is-opened");
   document.removeEventListener("keydown", closeModalEsc);
-  document.removeEventListener('click', closeModalOverlay);
-  popup.querySelector('.popup__close').addEventListener('click', closeModalCloseButton);
+  document.removeEventListener("click", closeModalOverlay);
+  popup
+    .querySelector(".popup__close")
+    .addEventListener("click", closeModalCloseButton);
 }
 
 // @todo: Функция закрытия модального окна по кнопке Esc
@@ -21,14 +23,14 @@ function closeModalEsc(event) {
 
 // @todo: Функция закрытия модального окна по крестику в модальном окне
 function closeModalCloseButton(event) {
-  closeModal(event.target.closest('.popup'));
+  closeModal(event.target.closest(".popup"));
 }
 
 // @todo: Функция закрытия модального окна по оверлею
 function closeModalOverlay(e) {
-  document.querySelector('.popup').addEventListener('click', (event) => {
-    if (event.target === document.querySelector('.popup')) {
-      closeModal(e.target.closest('.popup'));
+  document.querySelector(".popup").addEventListener("click", (event) => {
+    if (event.target === document.querySelector(".popup")) {
+      closeModal(e.target.closest(".popup"));
     }
-  })
+  });
 }
