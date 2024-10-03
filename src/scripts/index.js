@@ -71,7 +71,7 @@ function addCard(card) {
 }
 
 // @todo: Вывести карточки на страницу
-initialCards.forEach((card) => {
+initialCards.forEach((cardData) => {
   addCard(createCard(cardData, deleteCard, likeCard, zoomCard));
 });
 
