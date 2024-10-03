@@ -31,10 +31,10 @@ function closeModalCloseButton(event) {
 }
 
 // @todo: Функция закрытия модального окна по оверлею
-function closeModalOverlay(e) {
-  document.querySelector(".popup").addEventListener("click", (event) => {
-    if (event.target === document.querySelector(".popup")) {
-      closeModal(e.target.closest(".popup"));
-    }
-  });
+function closeModalOverlay(event) {
+  const { target } = event;
+
+  if (target.classList.contains("popup")) {
+    closeModal(target);
+  }
 }
