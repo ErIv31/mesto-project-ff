@@ -1,7 +1,7 @@
 import "../pages/index.css";
 import { initialCards } from "./components/cards";
-import { createCard, deleteCard, likeCard } from "./components/card";
-import { openModal, closeModal } from "./components/modal";
+import { createCard, deleteCard, likeCard } from "./components/card.js";
+import { openModal, closeModal } from "./components/modal.js";
 
 // @todo: DOM узлы
 const cardList = document.querySelector(".places__list"),

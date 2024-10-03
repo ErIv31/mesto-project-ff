@@ -1,13 +1,13 @@
 {
   "name": "mesto-project-ff",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "https://github.com/ErIv31/mesto-project-ff.git",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve"
   },
-  "author": "",
+  "author": "Ermolaev Ivan",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.25.2",
