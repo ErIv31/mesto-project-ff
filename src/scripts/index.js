@@ -4,24 +4,22 @@ import { createCard, deleteCard, likeCard } from "./components/card.js";
 import { openModal, closeModal } from "./components/modal.js";
 
 // @todo: DOM узлы
-const cardList = document.querySelector(".places__list"),
-  profile = document.querySelector(".profile"),
-  profileTitle = profile.querySelector(".profile__title"),
-  profileDescription = profile.querySelector(".profile__description"),
-  addProfileButton = profile.querySelector(".profile__add-button"),
-  editProfileButton = profile.querySelector(".profile__edit-button"),
-  popupEditProfile = document.querySelector(".popup_type_edit"),
-  inputPopupName = popupEditProfile.querySelector(".popup__input_type_name"),
-  inputPopupDescription = popupEditProfile.querySelector(
-    ".popup__input_type_description"
-  ),
-  popupNewCard = document.querySelector(".popup_type_new-card"),
-  form = popupNewCard.querySelector(".popup__form"),
-  inputCardName = form.querySelector(".popup__input_type_card-name"),
-  inputCardUrl = form.querySelector(".popup__input_type_url"),
-  popupTypeImage = document.querySelector(".popup_type_image"),
-  popupImage = popupTypeImage.querySelector(".popup__image"),
-  popupCaption = popupTypeImage.querySelector(".popup__caption");
+const cardList = document.querySelector(".places__list");
+const profile = document.querySelector(".profile");
+const profileTitle = profile.querySelector(".profile__title");
+const profileDescription = profile.querySelector(".profile__description");
+const addProfileButton = profile.querySelector(".profile__add-button");
+const editProfileButton = profile.querySelector(".profile__edit-button");
+const popupEditProfile = document.querySelector(".popup_type_edit");
+const inputPopupName = popupEditProfile.querySelector(".popup__input_type_name");
+const inputPopupDescription = popupEditProfile.querySelector(".popup__input_type_description");
+const popupNewCard = document.querySelector(".popup_type_new-card");
+const form = popupNewCard.querySelector(".popup__form");
+const inputCardName = form.querySelector(".popup__input_type_card-name");
+const inputCardUrl = form.querySelector(".popup__input_type_url");
+const popupTypeImage = document.querySelector(".popup_type_image");
+const popupImage = popupTypeImage.querySelector(".popup__image");
+const popupCaption = popupTypeImage.querySelector(".popup__caption");
 
 function zoomCard(name, url) {
   popupCaption.textContent = name;
