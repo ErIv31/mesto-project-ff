@@ -58,7 +58,7 @@ function submitNewCard(event) {
 
   const cardData = {
     name: inputCardName.value,
-    url: inputCardUrl.value,
+    link: inputCardUrl.value,
   };
 
   const newCard = createCard(cardData, deleteCard, likeCard, zoomCard);
