@@ -25,7 +25,7 @@ const popupTypeImage = document.querySelector(".popup_type_image");
 const popupImage = popupTypeImage.querySelector(".popup__image");
 const popupCaption = popupTypeImage.querySelector(".popup__caption");
 
-function zoomCard(name, url) {
+function zoomCard(url, name) {
   popupCaption.textContent = name;
   popupImage.src = url;
   popupImage.alt = name;
