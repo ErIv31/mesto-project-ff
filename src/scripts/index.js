@@ -25,6 +25,7 @@ const popupTypeImage = document.querySelector(".popup_type_image");
 const popupImage = popupTypeImage.querySelector(".popup__image");
 const popupCaption = popupTypeImage.querySelector(".popup__caption");
 
+// @todo: Функция увелечения карточки
 function zoomCard(url, name) {
   popupCaption.textContent = name;
   popupImage.src = url;
@@ -33,10 +34,12 @@ function zoomCard(url, name) {
   openModal(popupTypeImage);
 }
 
+// @todo: Функция открытия модального окна с карточкой
 function openModalNewCard() {
   openModal(popupNewCard);
 }
 
+// @todo: Функция открытия модального окна с редактированием профиля
 function openModalEditProfile() {
   inputPopupName.value = profileTitle.textContent;
   inputPopupDescription.value = profileDescription.textContent;
@@ -44,6 +47,7 @@ function openModalEditProfile() {
   openModal(popupEditProfile);
 }
 
+// @todo: Функция сохранения профиля по кнопке "Сохранить"
 function submitProfileEdit(event) {
   event.preventDefault();
 
@@ -53,6 +57,7 @@ function submitProfileEdit(event) {
   closeModal(popupEditProfile);
 }
 
+// @todo: Функция создания новой карточки по кнопке "Сохранить"
 function submitNewCard(event) {
   event.preventDefault();
 
@@ -68,6 +73,7 @@ function submitNewCard(event) {
   form.reset();
 }
 
+// @todo: Функция добавления карточки в массив карточек
 function addCard(card) {
   cardList.append(card);
 }
@@ -77,8 +83,10 @@ initialCards.forEach((cardData) => {
   addCard(createCard(cardData, deleteCard, likeCard, zoomCard));
 });
 
+// @todo: Открытие модального окна редактирования профиля и добавления новых карточек по клику
 editProfileButton.addEventListener("click", openModalEditProfile);
 addProfileButton.addEventListener("click", openModalNewCard);
 
+// @todo: Обработка кнопки "Сохранить" модального окна
 popupEditProfile.addEventListener("submit", submitProfileEdit);
 popupNewCard.addEventListener("submit", submitNewCard);
