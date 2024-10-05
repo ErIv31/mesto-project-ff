@@ -18,9 +18,9 @@ const inputPopupDescription = popupEditProfile.querySelector(
   ".popup__input_type_description"
 );
 const popupNewCard = document.querySelector(".popup_type_new-card");
-const form = popupNewCard.querySelector(".popup__form");
-const inputCardName = form.querySelector(".popup__input_type_card-name");
-const inputCardUrl = form.querySelector(".popup__input_type_url");
+const formNewCard = popupNewCard.querySelector(".popup__form");
+const inputCardName = formNewCard.querySelector(".popup__input_type_card-name");
+const inputCardUrl = formNewCard.querySelector(".popup__input_type_url");
 const popupTypeImage = document.querySelector(".popup_type_image");
 const popupImage = popupTypeImage.querySelector(".popup__image");
 const popupCaption = popupTypeImage.querySelector(".popup__caption");
@@ -70,7 +70,7 @@ function submitNewCard(event) {
 
   cardList.prepend(newCard);
   closeModal(popupNewCard);
-  form.reset();
+  formNewCard.reset();
 }
 
 // @todo: Функция добавления карточки в массив карточек

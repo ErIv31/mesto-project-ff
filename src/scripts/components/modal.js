@@ -12,10 +12,7 @@ export function openModal(popup) {
 export function closeModal(popup) {
   popup.classList.remove("popup_is-opened");
   document.removeEventListener("keydown", closeModalEsc);
-  document.removeEventListener("click", closeModalOverlay);
-  popup
-    .querySelector(".popup__close")
-    .addEventListener("click", closeModalCloseButton);
+  document.removeEventListener("click", closeModalOverlay); 
 }
 
 // @todo: Функция закрытия модального окна по кнопке Esc
