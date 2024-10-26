@@ -1,0 +1,15 @@
+.form__input-error {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  font-size: 12px;
+  line-height: 12px;
+  color: red;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.popup__input_type_error {
+  border-bottom-color: red;
+}
