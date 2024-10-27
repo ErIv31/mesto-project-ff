@@ -1,3 +1,4 @@
+// Показать ошибку ввода
 function showInputError(
   formElement,
   inputElement,
@@ -10,6 +11,7 @@ function showInputError(
   errorElement.textContent = errorMessage;
 }
 
+// Скрыть ошибку ввода
 function hideInputError(formElement, inputElement, validationConfig) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(validationConfig.inputErrorClas);
@@ -18,6 +20,7 @@ function hideInputError(formElement, inputElement, validationConfig) {
   inputElement.setCustomValidity("");
 }
 
+// Проверка на валидность полей
 function hasInvalidInput(inputList) {
   return inputList.some((input) => {
     return !input.validity.valid;
@@ -42,6 +45,7 @@ function checkInputValidity(formElement, inputElement, validationConfig) {
   }
 }
 
+// Изменение кнопки от статуса валидности
 function toggleButtonState(inputList, buttonElement, validationConfig) {
   if (hasInvalidInput(inputList)) {
     buttonElement.disabled = true;
@@ -52,6 +56,7 @@ function toggleButtonState(inputList, buttonElement, validationConfig) {
   }
 }
 
+// Прослушивание событий
 function setEventListeners(formElement, validationConfig) {
   const inputList = Array.from(
     formElement.querySelectorAll(validationConfig.inputSelector)
@@ -68,6 +73,7 @@ function setEventListeners(formElement, validationConfig) {
   });
 }
 
+// Включение валидации
 export function enableValidation(validationConfig) {
   const formList = Array.from(
     document.querySelectorAll(validationConfig.formSelector)
@@ -77,6 +83,7 @@ export function enableValidation(validationConfig) {
   });
 }
 
+// Очистка ошибок валидации 
 export function clearValidation(formElement, validationConfig) {
   const inputList = Array.from(
     formElement.querySelectorAll(validationConfig.inputSelector)
