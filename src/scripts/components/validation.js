@@ -22,8 +22,8 @@ function hideInputError(formElement, inputElement, validationConfig) {
 
 // Проверка на валидность полей
 function hasInvalidInput(inputList) {
-  return inputList.some((input) => {
-    return !input.validity.valid;
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
   });
 }
 
@@ -66,7 +66,7 @@ function setEventListeners(formElement, validationConfig) {
   );
   toggleButtonState(inputList, buttonElement, validationConfig);
   inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", function() {
+    inputElement.addEventListener("input", function () {
       checkInputValidity(formElement, inputElement, validationConfig);
       toggleButtonState(inputList, buttonElement, validationConfig);
     });
@@ -83,7 +83,7 @@ export function enableValidation(validationConfig) {
   });
 }
 
-// Очистка ошибок валидации 
+// Очистка ошибок валидации
 export function clearValidation(formElement, validationConfig) {
   const inputList = Array.from(
     formElement.querySelectorAll(validationConfig.inputSelector)

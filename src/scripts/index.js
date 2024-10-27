@@ -55,7 +55,9 @@ const inputCardUrl = formNewCard.querySelector(".popup__input_type_url");
 const popupTypeImage = document.querySelector(".popup_type_image");
 const popupImage = popupTypeImage.querySelector(".popup__image");
 const popupCaption = popupTypeImage.querySelector(".popup__caption");
-const inputUserAvatar = popupTypeAvatar.querySelector(".popup__input_type_avatar");
+const inputUserAvatar = popupTypeAvatar.querySelector(
+  ".popup__input_type_avatar"
+);
 const formUserAvatar = popupTypeAvatar.querySelector(".popup__form");
 const userAvatar = profile.querySelector(".profile__image");
 
