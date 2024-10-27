@@ -35,7 +35,7 @@ export function createCard(cardData, userID, deleteCard, likeCard, zoomCard) {
   }
 
   cardLikeButton.addEventListener("click", (event) =>
-    likeCard(event.target, likeCount, cardData._id)
+    likeCard(event, likeCount, cardData._id)
   );
   cardImage.addEventListener("click", () =>
     zoomCard(cardData.link, cardData.name)
@@ -50,12 +50,12 @@ export function deleteCard(card) {
 }
 
 //Функция лайка карточки
-export function likeCard(event, cardId, likeCount) {
+export function likeCard(event, likeCount, cardId) {
   if (event.target.classList.contains("card__like-button_is-active")) {
     removeLike(cardId)
       .then((card) => {
-        likeCount.textContent = card.likes.length;
         event.target.classList.remove("card__like-button_is-active");
+        likeCount.textContent = card.likes.length;        
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -63,8 +63,8 @@ export function likeCard(event, cardId, likeCount) {
   } else {
     addLike(cardId)
       .then((card) => {
-        likeCount.textContent = card.likes.length;
         event.target.classList.add("card__like-button_is-active");
+        likeCount.textContent = card.likes.length;        
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
