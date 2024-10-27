@@ -67,7 +67,7 @@ function renderProfile(user, userData) {
   userData.userAbout.textContent = user.about;
   userData.userAvatar.setAttribute(
     "style",
-    `background-image: usrl(${user.avatar});`
+    `background-image: url(${user.avatar});`
   );
 }
 
