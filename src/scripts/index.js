@@ -21,6 +21,8 @@ const validationConfig = {
   errorClass: "popup__error_visible",
 };
 
+enableValidation(validationConfig);
+
 // @todo: DOM узлы
 
 const userData = {
@@ -211,8 +213,6 @@ Promise.all(promises)
   .catch((err) => {
     console.log(`Ошибка: ${err}`);
   });
-
-enableValidation(validationConfig);
 
 // Открытие модального окна редактирования профиля и добавления новых карточек по клику
 editProfileButton.addEventListener("click", openModalEditProfile);
