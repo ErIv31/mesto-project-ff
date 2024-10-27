@@ -24,7 +24,7 @@ export function getUserProfile() {
 }
 
 // Редактирование профиля пользователя
-export function editUsertProfile(name, about) {
+export function editUserProfile(name, about) {
   return fetch(`${config.baseUrl}/users/me`, {
     method: "PATCH",
     headers: config.headers,
