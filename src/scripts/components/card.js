@@ -51,23 +51,15 @@ export function deleteCard(card) {
 
 //Функция лайка карточки
 export function likeCard(event, likeCount, cardId) {
-  if (event.target.classList.contains("card__like-button_is-active")) {
-    removeLike(cardId)
-      .then((card) => {
-        event.target.classList.remove("card__like-button_is-active");
-        likeCount.textContent = card.likes.length;        
-      })
-      .catch((err) => {
-        console.log(`Ошибка: ${err}`);
-      });
-  } else {
-    addLike(cardId)
-      .then((card) => {
-        event.target.classList.add("card__like-button_is-active");
-        likeCount.textContent = card.likes.length;        
-      })
-      .catch((err) => {
-        console.log(`Ошибка: ${err}`);
-      });
-  }
+  const likeMethod = event.target.classList.contains(
+    "card__like-button_is-active"
+  )
+    ? removeLike
+    : addLike;
+  likeMethod(cardId)
+    .then((card) => {
+      event.target.classList.toggle("card__like-button_is-active");
+      likeCount.textContent = card.likes.length;
+    })
+    .catch((err) => console.log(err));
 }
